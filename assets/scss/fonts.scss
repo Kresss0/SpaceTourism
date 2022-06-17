@@ -1,0 +1,32 @@
+@font-face 
+{
+    font-family: 'Factor_A Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local(''),
+        url('../fonts/FactorAMedium-Regular.woff2') format('woff2'),
+        url('../fonts/FactorAMedium-Regular.woff') format('woff');
+}
+
+@font-face 
+{
+    font-family: 'Barlow Semibold';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local(''),
+        url('../fonts/barlow-v11-latin-700.woff2') format('woff2'),
+        url('../fonts/barlow-v11-latin-700.woff') format('woff');
+}
+
+@font-face 
+{
+    font-family: 'Bellefair';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local(''),
+        url('../fonts/Bellefair-Regular.woff2') format('woff2'),
+        url('../fonts/Bellefair-Regular.woff2') format('woff');
+}

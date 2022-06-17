@@ -1,0 +1,20 @@
+@mixin flexBox($axisX, $axisY, $type) {
+    display: flex;
+    justify-content: $axisX;
+    align-items: $axisY;
+    flex-direction: $type;
+}
+
+@mixin mainTextStyle($clr, $transform, $fFamily, $fSize, $line-height, $space) 
+{
+    color: $color;
+    text-transform: $transform;
+    font-family: $fFamily;
+    font-size: $fSize;
+    line-height: $line-height;
+    letter-spacing: $space;   
+}
+
+@mixin grid {
+    display: grid;
+}
