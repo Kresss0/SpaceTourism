@@ -7,7 +7,7 @@
 
 @mixin mainTextStyle($clr, $transform, $fFamily, $fSize, $line-height, $space) 
 {
-    color: $color;
+    color: $clr;
     text-transform: $transform;
     font-family: $fFamily;
     font-size: $fSize;
@@ -15,6 +15,26 @@
     letter-spacing: $space;   
 }
 
-@mixin grid {
-    display: grid;
+%tplWrapper {
+    max-width: 100%;
+    height: 100%;
+    padding: 0px 2vh;
+}
+
+%tplLinksStyles
+{
+    text-transform: uppercase;
+    color: $textClrMain;
+    font-size: $fs300;
+    *:first-child 
+    {
+        font-family: $ffSpecial;
+        letter-spacing: 0.2vh;
+    }
+    *:last-child 
+    {
+        margin-left: 0.5vw;
+        font-family: $ffTitle;
+        letter-spacing: 0.2vh;
+    }
 }

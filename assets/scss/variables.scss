@@ -13,6 +13,18 @@ $fs900: calc(3.5vh + 1.7vw);
 $fs1000: calc(4vh + 3vw);
 $fs1100: 10vw;
 
-$ffContent: 'Factor_A Medium', sans-serif ;
-$ffHeadings: 'Barlow Semibold', sans-serif ;
-$ffTitle: 'Bellefair', sans-serif ;
+$bgClrMain: hsl(230 35% 7%);
+$bgClrSpecial: hsl(231 77% 90%);
+$bgClrExtra: hsl(0 0% 100%);
+
+$undrlineClr: hsl(0 0% 100% / .25);
+$btnEffectClr: hsl(0 0% 100% / .15); 
+
+$textClrMain: hsl(0 0% 100%);
+$textClrSpecial: hsl(231 77% 90%);
+$textClrExtra: hsl(230 35% 7%);
+
+$ffContent: 'Factor_A Medium', sans-serif;
+$ffHeadings: 'Barlow Semibold', sans-serif;
+$ffSpecial: 'Barlow Bold', sans-serif;
+$ffTitle: 'Bellefair', sans-serif;

@@ -5,26 +5,140 @@
 @import "media.scss";
 @import "animations.scss";
 
-.page__wrapper {
-    height: 100%;
-    max-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+.header__content {
+    width: 100%;
+    height: 9vh;
+    &-container {
+        @extend %tplWrapper;
+        @include flexBox(space-between, center, none);
+    }  
+    &-logo {
+        @include flexBox(center, center, none);
+        .logo {
+            display: block;
+            height: 5vh;
+            width: 5vh;
+        }
+    }
+    &-menu {
+        height: 100%;
+        @include flexBox(flex-end, center, none);
+        .menu__body {
+            height: 100%;
+            .menu__list {
+                @include flexBox(none, center, none);
+                height: 100%;
+                > *:not(:last-child) {
+                    margin-right: 2vw;
+                }
+                .menu__list-item {
+                    @include flexBox(none, center, none);
+                    height: 100%;
+                    position: relative;
+                    &.inactive {
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 0.3vh;
+                            transition: 0.3s ease-in-out;
+                            opacity: 0;
+                        }
+                    }
+                    &.inactive:hover::after {
+                        background: $undrlineClr;
+                        opacity: 1;
+                    }
+                    &.active {
+                        position: relative;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 0.3vh;
+                            background: $bgClrExtra;
+                        }
+                    }
+                    .menu-link {
+                        @extend %tplLinksStyles;
+                    }
+                }
+            }
+        }
+    }
 }
 
-.header {
+.intro__block
+{
     width: 100%;
     height: 100%;
-}
-
-.main {
-    flex: 1 1 auto;
-    width: 100%;
-    height: 100%;
-}
-
-.footer {
-    width: 100%;
-    height: 100%;
+    &-container {
+        @extend %tplWrapper;
+        height: 100%;
+    }
+    &-inner {
+        width: 100%;
+        height: 100%;
+    }
+    &-content {
+        @include flexBox(none, none, column);
+        .heading-container {
+            width: 100%;
+            h1 {
+                *:first-child {
+                    @include mainTextStyle($textClrSpecial, uppercase, $ffTitle, $fs600, 1vh, 0.5vh);
+                }
+                *:last-child {
+                    @include mainTextStyle($textClrMain, uppercase, $ffTitle, $fs1000, 5vh, 0.5vh); 
+                }
+            }
+        }
+        .text-container {
+            margin-top: 1.5vh;
+            width: 100%;
+            p {
+                @include mainTextStyle($textClrMain, none, $ffContent, $fs400, 2vh, 0.1vh); 
+            }
+        }
+    }
+    &-button {
+        .large-button {
+            background: $bgClrExtra;
+            position: relative;
+            height: 20vh;
+            width: 20vh;
+            display: inline-grid;
+            aspect-ratio: 1;
+            place-items: center;
+            border-radius: 50%;
+            outline: 0.1px solid transparent;
+            transition: 1s linear;
+            z-index: 1;
+            font-family: $ffTitle;
+            font-size: $fs600;
+            color: $textClrExtra;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                z-index: -1; 
+                background: $btnEffectClr;
+                opacity: 0;
+                transition: opacity 500ms linear, transform 750ms ease-in-out;
+            }
+            &:hover::after, 
+            &:focus::after {
+                transform: scale(1.5);
+                opacity: 1; 
+            }
+        }
+    }
 }
