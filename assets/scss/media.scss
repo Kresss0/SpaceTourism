@@ -1,0 +1,64 @@
+@media (min-width: 768px) 
+{
+    .intro__block-inner
+    {
+        height: 100%;
+        padding: 0px 2vh;
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 80% 1fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+          ". ."
+          "button content";
+        .intro__block-button {
+            grid-area: button;
+        }
+        .intro__block-content {
+            grid-area: content;
+        }
+    }
+
+}
+
+@media (max-width: 767px) 
+{
+    .intro__block
+    {
+        margin-top: 10vh;
+        &-button {
+            margin-top: 10vh;
+        }
+    }
+
+}
+
+.home__page-wrapper {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    @media (min-width: 768px) 
+    {
+        animation: home-background-effect 40s ease-in-out infinite;
+        background: linear-gradient(#000000cc, #00000000, #000000cc), linear-gradient(90deg, #00000000, #00000000, #000000b3), url(../image/home/background-home-desktop.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    @media (max-width: 768px) and (max-height: 700px) 
+    {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background: linear-gradient(#000000cc, #00000000, #000000cc), url(../image/home/background-home-mobile.jpg);
+    }
+
+    @media (max-width: 768px) and (min-height: 701px)  
+    {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background: linear-gradient(#000000cc, #00000000, #00000000), url(../image/home/background-home-tablet.jpg);
+    }
+
+}

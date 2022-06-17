@@ -16,16 +16,17 @@
 }
 
 %tplWrapper {
+    margin: 0 auto;
     max-width: 100%;
     height: 100%;
-    padding: 0px 2vh;
+    padding: 0px 2vw;
 }
 
 %tplLinksStyles
 {
     text-transform: uppercase;
     color: $textClrMain;
-    font-size: $fs300;
+    font-size: $fs600;
     *:first-child 
     {
         font-family: $ffSpecial;
