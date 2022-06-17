@@ -117,9 +117,7 @@
         height: 100%;
         @include flexBox(center, center, none);
         .large-button {
-            background: linear-gradient(#00000080, #00000000 , #00000080), url(../image/home/background-button.jpg);
-            background-position: center;
-            background-size: cover;
+            position: relative;
             height: calc(12vh + 12vw);
             width: calc(12vh + 12vw);
             display: inline-grid;
@@ -131,8 +129,8 @@
             color: $textClrMain;
             text-transform: uppercase;
             letter-spacing: 0.5vh;
+            z-index: 100;
             animation: button-effect 2s ease-in-out infinite;
-            text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
             &:hover {
                 box-shadow: 0 -10px 400px, 0 0 2px, 0 0 1em #ff0000, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 0px 3px #000;
             }

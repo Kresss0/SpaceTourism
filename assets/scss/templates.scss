@@ -39,3 +39,13 @@
         letter-spacing: 0.2vh;
     }
 }
+
+.home__background-effect 
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
