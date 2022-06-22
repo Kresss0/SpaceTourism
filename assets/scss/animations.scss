@@ -1,3 +1,7 @@
+body {
+    animation: content-apperance 0.8s ease-in-out;
+}
+
 .home-bg-1 {
     opacity: 0;
     background: linear-gradient(#000000cc, #00000000, #000000cc), linear-gradient(90deg, #00000000, #00000000, #000000b3), url(../image/home/background-home-1.jpg);
@@ -31,46 +35,16 @@
     background-position: center;
 }
 
-.button-bg-1 {
-    border-radius: 50%;
-    z-index: -1;
-    opacity: 0;
-    background: linear-gradient(#000000cc, #00000000, #000000cc), url(../image/home/background-button-1.jpg);
-    animation: home-bg-1 50s ease-in-out infinite;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.button-bg-2 {
-    border-radius: 50%;
-    z-index: -1;
-    opacity: 0;
-    background: linear-gradient(#000000cc, #00000000, #000000cc), url(../image/home/background-button-2.jpg);
-    animation: home-bg-2 50s ease-in-out infinite;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.button-bg-3 {
-    border-radius: 50%;
-    z-index: -1;
-    opacity: 0;
-    background: linear-gradient(#000000cc, #00000000, #000000cc), url(../image/home/background-button-3.jpg);
-    animation: home-bg-3 50s ease-in-out infinite;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.button-bg-4 {
-    border-radius: 50%;
-    z-index: -1;
-    opacity: 0;
-    background: linear-gradient(#000000cc, #00000000, #000000cc), url(../image/home/background-button-4.jpg);
-    animation: home-bg-4 50s ease-in-out infinite;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+@keyframes content-apperance {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes home-bg-1 
@@ -94,7 +68,7 @@
     23% {
         opacity: 0;
     }
-    25% {
+    24% {
         opacity: 1;
     }
     45% {
@@ -110,7 +84,7 @@
     47% {
         opacity: 0;
     }
-    50% {
+    48% {
         opacity: 1;
     }
     70% {
@@ -126,7 +100,7 @@
     72% {
         opacity: 0;
     }
-    75% {
+    73% {
         opacity: 1;
 
     }

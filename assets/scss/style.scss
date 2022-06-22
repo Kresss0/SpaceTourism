@@ -10,8 +10,8 @@
     height: 8vh;
     &-container {
         @extend %tplWrapper;
-        padding-top: 2vh;
         @include flexBox(space-between, center, none);
+        padding-top: 2vh;
     }  
     &-logo {
         @include flexBox(center, center, none);
@@ -23,11 +23,13 @@
     }
     &-menu {
         height: 100%;
-        @include flexBox(flex-end, center, none);
+        width: 100%;
+        @include flexBox(space-between, center, none);
         .menu__body {
+            width: 100%;
             height: 100%;
             .menu__list {
-                @include flexBox(none, center, none);
+                @include flexBox(center, center, none);
                 height: 100%;
                 > *:not(:last-child) {
                     margin-right: 2vw;
@@ -44,7 +46,7 @@
                             left: 0;
                             width: 100%;
                             height: 0.3vh;
-                            transition: 0.3s ease-in-out;
+                            transition: $fastTransition;
                             opacity: 0;
                         }
                     }
@@ -66,6 +68,140 @@
                     }
                     .menu-link {
                         @extend %tplLinksStyles;
+                    }
+                }
+            }
+        }
+        .menu__icon {
+            display: block;
+            position: relative;
+            width: calc(1.5vh + 2vw);
+            height: calc(1vh + 1vw);
+            cursor: pointer;
+            &::before,
+            &::after,
+            span {
+               border-radius: 20px;
+               left: 0;
+               position: absolute;
+               height: 0.3vh;
+               width: 100%;
+               transition: $lightTransition;
+               background-color: $bgClrExtra;
+            }
+            &::before,
+            &::after {
+               content: "";
+            }
+
+            &::before {
+               top: 0;
+            }
+
+            &::after {
+               bottom: 0;
+            }
+            span {
+               top: 50%;
+               transform: scale(1) translate(0px, -50%);
+            }
+
+            &.active span {
+               transform: scale(0) translate(0px, -50%);
+               background: $bgClrSpecial;
+            }
+            &.active::before {
+               top: 50%;
+               transform: rotate(-45deg) translate(0px, -50%);
+               background: $bgClrSpecial;
+            }
+            &.active::after {
+               bottom: 50%;
+               transform: rotate(45deg) translate(0px, 100%);
+               background: $bgClrSpecial;
+            }
+        }
+        .profile__menu {
+            transition: $lightTransition;
+            position: absolute;
+            pointer-events: none;
+            opacity: 0;
+            top: 8vh;
+            right: 2vw;
+            width: calc(7vh + 12vw);
+            @include flexBox(flex-end, none, none);
+            &-box {
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                @include flexBox(center, none, column);
+                border-radius: 10px 0px 10px 10px;
+                overflow: hidden;
+                transition: $lightTransition;
+                width: 0px;
+                height: 0px;
+                background: url(../image/home/menu-background.jpg);
+                border: 0.2vh solid #ffffff99;
+                .profile__menu-show {
+                    padding: 1vh 1vw;
+                    width: 100%;
+                    height: 100%;
+                    @include flexBox(center, center, none);
+                    .profile-avatar {
+                        transition: $lightTransition;
+                        width: 0px;
+                        height: 0px;
+                        border-radius: 50%;
+                        border: 0.2vh solid $bgClrSpecial;
+                        img {
+                           position: absolute;
+                           top: 0;
+                           left: 0;
+                           object-fit: cover;
+                        }
+                        .profile-user {
+                        }
+                    }
+                }
+                .profile__menu-list {
+                    border-top: 0.2vh solid #ffffff99;
+                    width: 100%;
+                    height: 100%;
+                    padding: 1vh 0vh;
+                    .profile__list {
+                        width: 100%;
+                        height: 100%;
+                        &-item {
+                            width: 100%;
+                            @include flexBox(center, center, none);
+                            padding: 0.1vh 0px;
+                            .profile-link {
+                                width: 100%;
+                                @include flexBox(center, center, none);
+                                span {
+                                    display: block;
+                                    @include mainTextStyle($textClrSpecial, none, $ffTitle, $fs400, auto, 2px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.active {
+                pointer-events: all;
+                opacity: 1;
+                .profile__menu-box.active {
+                    width: 100%;
+                    height: 100%;
+                    .profile__menu-show {
+                        .profile-avatar {
+                            width: calc(3vh + 3vw);
+                            height: calc(3vh + 3vw);
+                        }
+                    }
+                    .profile__menu-list {
+                        &-item {
+                        }
                     }
                 }
             }
@@ -117,23 +253,177 @@
         height: 100%;
         @include flexBox(center, center, none);
         .large-button {
-            position: relative;
             height: calc(12vh + 12vw);
             width: calc(12vh + 12vw);
             display: inline-grid;
             place-items: center;
             border-radius: 50%;
-            transition: 1s ease-in-out;
+            transition: $easeTransition;
             font-family: $ffSpecial;
             font-size: $fs700;
             color: $textClrMain;
             text-transform: uppercase;
             letter-spacing: 0.5vh;
-            z-index: 100;
-            animation: button-effect 2s ease-in-out infinite;
+            background: linear-gradient(#00000000, #0000006e, #00000000), url(../image/home/background-button-1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             &:hover {
-                box-shadow: 0 -10px 400px, 0 0 2px, 0 0 1em #ff0000, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 0px 3px #000;
+                box-shadow: 0 -10px 400px, 0 0 2px, 0 0 1em #000000, 0 0 0.5em #000000, 0 0 0.1em #000000, 0 0px 3px #000;
             }
         }
+    }
+}
+
+.destination__block {
+    width: 100%;
+    height: 100%;
+    &-container {
+        width: 100%;
+        height: 100%;
+        padding: 0px 2vh;
+        display: grid; 
+        grid-auto-columns: 1fr; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: 20vh 1fr 20vh; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+        "."
+        "content"
+        "."; 
+    }
+    &-inner {
+        grid-area: content;
+        width: 100%;
+        height: 100%;
+        @include flexBox(none, none, column);
+    }
+    .heading-wrapper {
+        width: 100%;
+        margin-bottom: 5vh;
+        h1 {
+            width: 100%;
+            text-align: center;
+            @extend %tplLinksStyles;    
+        }
+    }
+    .content-wrapper {
+        width: 100%;
+        height: 100%;
+        @include flexBox(space-around, center, none);
+        .planet__container {
+            height: calc(12vh + 12vw);
+            width: calc(12vh + 12vw);
+            *.active {
+                display: block;
+            }
+            *.inactive {
+                display: none;
+            }
+        }
+        .items__container {
+            @include flexBox(none, none, column);
+            max-width: 40vw;
+            &-tabs {
+                width: 100%;
+                @include flexBox(space-between, center, none);
+                margin-bottom: 3vh;
+                .planet-tab {
+                    height: 4vh;
+                    @include flexBox(center, center, none);
+                    position: relative;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    * {
+                        font-size: $fs400;
+                        font-family: $ffTitle;
+                        color: $textClrMain;
+                        text-transform: uppercase;
+                    }
+                    &.inactive {
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 0.3vh;
+                            transition: $fastTransition;
+                            opacity: 0;
+                        }
+                    }
+                    &.inactive:hover::after {
+                        background: $undrlineClr;
+                        opacity: 1;
+                    }
+                    &.active {
+                        position: relative;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 0.3vh;
+                            background: $bgClrExtra;
+                        }
+                    }
+                }
+            }
+            &-text {
+                display: block;
+                width: 100%;
+                height: 10vh;
+                * {
+                    @include mainTextStyle($textClrMain, none, $ffContent, $fs400, auto, 2px);
+                }
+                *.active {
+                    display: block;
+                }
+                *.inactive {
+                    display: none;
+                }
+            }
+            &-info {
+                margin-top: 5vh;
+                width: 100%;
+                .info-block {
+                    @include flexBox(space-between, center, none);
+                    .distance {
+                        width: 100%;
+                        *:first-child {
+                            @include mainTextStyle($textClrSpecial, uppercase, $ffContent, $fs500, auto, 2px);
+                        }
+                        *:not(first-child) {
+                            @include mainTextStyle($textClrMain, uppercase, $ffTitle, $fs600, auto, 1px);      
+                        }
+                        *.active {
+                            display: block;
+                        }
+                        *.inactive {
+                            display: none;
+                        }
+                    }
+                    .travel-time {
+                        width: 100%;
+                        *:first-child {
+                            @include mainTextStyle($textClrSpecial, uppercase, $ffContent, $fs500, auto, 2px);
+                        }
+                        *:not(first-child) {
+                            @include mainTextStyle($textClrMain, uppercase, $ffTitle, $fs600, auto, 1px);      
+                        }
+                        *.active {
+                            display: block;
+                        }
+                        *.inactive {
+                            display: none;
+                        } 
+                    }
+                }
+            }
+        }
+        
     }
 }

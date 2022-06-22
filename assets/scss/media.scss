@@ -1,8 +1,7 @@
 @media (min-width: 768px) 
-{
+{   
     .intro__block-inner
     {
-        height: 100%;
         padding: 0px 2vh;
         display: grid; 
         grid-template-columns: 1fr 1fr; 
@@ -18,7 +17,6 @@
             grid-area: content;
         }
     }
-
 }
 
 @media (max-width: 767px) 
@@ -32,3 +30,4 @@
     }
 
 }
+

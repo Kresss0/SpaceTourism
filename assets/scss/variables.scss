@@ -4,7 +4,7 @@ $fs300: calc(1vh + 0.4vw);
 
 $fs400: calc(0.9vh + 0.5vw);
 $fs500: calc(0.9vh + 0.55vw);
-$fs600: calc(0.8vh + 0.8vw);
+$fs600: calc(0.7vh + 0.7vw);
 
 $fs700: calc(1.5vh + 1vw);
 $fs800: calc(2vh + 1.3vw);
@@ -28,3 +28,7 @@ $ffContent: 'Factor_A Medium', sans-serif;
 $ffHeadings: 'Barlow Semibold', sans-serif;
 $ffSpecial: 'Barlow Bold', sans-serif;
 $ffTitle: 'Bellefair', sans-serif;
+
+$fastTransition: 0.3s ease-in-out;
+$lightTransition: 0.5s ease-in-out;
+$easeTransition: 1s ease-in-out;
